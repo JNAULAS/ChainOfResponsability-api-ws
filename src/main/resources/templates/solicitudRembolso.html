@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <meta charset="UTF-8">
+    <title>Solicitud Rembolso</title>
+</head>
+<body>
+    <h1>Solicitud Rembolso</h1>
+    <form action="/crearSolicitudRembolso" method="post" th:object="requestChainOfResponsability">
+        <br>
+        <label for="montoRembolso">Monto Rembolso:</label>
+        <input type="text" id="montoRembolso" name="montoRembolso" th:field="*{montoRembolso}">
+        <br>
+        <label for="resultadoRemsolso">Resultado Rembolso:</label>
+        <input type="text" id="resultadoRemsolso" name="resultadoRemsolso" th:field="*{resultadoRemsolso}">
+        <br>
+        <button type="submit">Solicitar Rembolso Supervisor</button>
+        <button type="submit">Solicitar Rembolso Gerente</button>
+        <button type="submit">Solicitar Rembolso Dueño</button>
+    </form>
+</body>
+</html>
