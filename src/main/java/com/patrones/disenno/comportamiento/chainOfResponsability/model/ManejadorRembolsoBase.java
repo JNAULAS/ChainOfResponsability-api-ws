@@ -3,19 +3,26 @@
  */
 package com.patrones.disenno.comportamiento.chainOfResponsability.model;
 
+import com.patrones.disenno.comportamiento.chainOfResponsability.request.RequestChainOfResponsability;
+
 /**
  * 
  */
 public class ManejadorRembolsoBase implements ManejadorRembolso{
+	
+	private ManejadorRembolso siguienteManejadorRembolso;
 	private double monto;
 	
-
+	
+	
 	/**
 	 * @return the monto
 	 */
 	public double getMonto() {
 		return monto;
 	}
+
+
 
 	/**
 	 * @param monto the monto to set
@@ -24,24 +31,30 @@ public class ManejadorRembolsoBase implements ManejadorRembolso{
 		this.monto = monto;
 	}
 
-	@Override
-	public String visualizarEstado() {
-		// TODO Auto-generated method stub
-		return null;
+
+
+	/**
+	 * @param siguienteManejadorRembolso the siguienteManejadorRembolso to set
+	 */
+	public void setSiguienteManejadorRembolso(ManejadorRembolso siguienteManejadorRembolso) {
+		this.siguienteManejadorRembolso = siguienteManejadorRembolso;
 	}
 
+
+
 	@Override
-	public String manjeadorSolicitudes() {
+	public void manjeadorSolicitudes(RequestChainOfResponsability requestChainOfResponsability) {
 		// TODO Auto-generated method stub
-		return null;
+		String valorRetorno = null;
+		if(siguienteManejadorRembolso != null ) {
+			siguienteManejadorRembolso.manjeadorSolicitudes(requestChainOfResponsability);
+		}else {
+			requestChainOfResponsability.setResultadoRembolso("La solicitud de rembolso no pudo ser autorizada.");
+		}
 	}
+
+
 	
-	public String respuestaManejador() {
-		return "";
-	}
-	public boolean siguienteManejador() {
-		return true;
-	}
 
 
 }

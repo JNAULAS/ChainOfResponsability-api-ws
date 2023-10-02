@@ -3,12 +3,13 @@
  */
 package com.patrones.disenno.comportamiento.chainOfResponsability.model;
 
+import com.patrones.disenno.comportamiento.chainOfResponsability.request.RequestChainOfResponsability;
+
 /**
  * 
  */
 public interface ManejadorRembolso {
 
-	public abstract String manjeadorSolicitudes();
-	public abstract String visualizarEstado();
+	public void manjeadorSolicitudes(RequestChainOfResponsability requestChainOfResponsability);
 	
 }
