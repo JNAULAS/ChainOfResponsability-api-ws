@@ -6,7 +6,7 @@ package com.patrones.disenno.comportamiento.chainOfResponsability.request;
 /**
  * 
  */
-public class RequestChainOfResponsability {
+public class ResponseChainOfResponsability {
 	private String montoRembolso;
 	private String resultadoRembolso;
 	private boolean okRembolsoSupervisor;
@@ -72,7 +72,6 @@ public class RequestChainOfResponsability {
 	public void setOkRembolsoDuenno(boolean okRembolsoDuenno) {
 		this.okRembolsoDuenno = okRembolsoDuenno;
 	}
-	
 	
 
 }
