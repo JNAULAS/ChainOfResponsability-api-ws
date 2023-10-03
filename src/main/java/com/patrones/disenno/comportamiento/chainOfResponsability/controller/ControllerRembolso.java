@@ -24,7 +24,9 @@ public class ControllerRembolso {
 
 	@GetMapping("/home")
 	public String home(Model model) {
-		String mensaje = "Bienvenidos";
+		// Inicializa objeto
+		requestChainOfResponsabilityRetorno = new RequestChainOfResponsability();
+		String mensaje = "Home gestión rembolsos";
 		model.addAttribute("mensaje", mensaje);
 		return "home"; // Return the name of your Thymeleaf template
 	}
