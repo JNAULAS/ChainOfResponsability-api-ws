@@ -1,4 +1,4 @@
-package com.patrones.comportamiento.chainOfResponsability;
+package com.patrones.disenno.comportamiento.chainOfResponsability;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,7 +16,6 @@ public class ChainOfResponsabilityApiWsApplication extends SpringBootServletInit
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		// TODO Auto-generated method stub
 		return application.sources(ChainOfResponsabilityApiWsApplication.class);
 	}
 	
