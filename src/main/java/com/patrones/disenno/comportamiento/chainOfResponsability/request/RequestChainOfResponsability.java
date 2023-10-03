@@ -9,9 +9,6 @@ package com.patrones.disenno.comportamiento.chainOfResponsability.request;
 public class RequestChainOfResponsability {
 	private double montoRembolso;
 	private String resultadoRembolso;
-//	private boolean okRembolsoSupervisor;
-//	private boolean okRembolsoGerente;
-//	private boolean okRembolsoDuenno;
 	/**
 	 * @return the montoRembolso
 	 */

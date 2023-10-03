@@ -14,11 +14,13 @@ import com.patrones.disenno.comportamiento.chainOfResponsability.model.Manejador
 import com.patrones.disenno.comportamiento.chainOfResponsability.model.ManejadorSupervisor;
 import com.patrones.disenno.comportamiento.chainOfResponsability.request.RequestChainOfResponsability;
 
+
 /**
  * 
  */
 @Controller
 public class ControllerRembolso {
+	RequestChainOfResponsability requestChainOfResponsabilityRetorno = new RequestChainOfResponsability();
 
 	@GetMapping("/home")
 	public String home(Model model) {
@@ -30,15 +32,16 @@ public class ControllerRembolso {
 	// Metodo para inicializar el formulario
 	@GetMapping("/createSolicitudForm")
 	public String createSolicitudForm(Model model) {
-		model.addAttribute("chainOfResponsability", new RequestChainOfResponsability());
+		model.addAttribute("requestChainOfResponsability", requestChainOfResponsabilityRetorno);
 		return "solicitudRembolso";
 	}
 
 	// Accion para ejecutar solicitat rembolso
 	@PostMapping("/solicitarRembolso")
-	public String solicitarRembolso(@ModelAttribute RequestChainOfResponsability requestChainOfResponsability) {
-		RequestChainOfResponsability requestChainOfResponsabilitySet = new RequestChainOfResponsability();
-		requestChainOfResponsabilitySet.setMontoRembolso(requestChainOfResponsability.getMontoRembolso());
+	public String solicitarRembolso(Model model, @ModelAttribute RequestChainOfResponsability requestChainOfResponsability) {
+		
+//		requestChainOfResponsabilitySet = new RequestChainOfResponsability();
+//		requestChainOfResponsabilitySet.setMontoRembolso(requestChainOfResponsability.getMontoRembolso());
 		
 		ManejadorSupervisor manejadorSupervisor = new ManejadorSupervisor();
 		ManejadorGerente manejadorGerente = new ManejadorGerente();
@@ -47,10 +50,12 @@ public class ControllerRembolso {
 		manejadorSupervisor.setSiguienteManejadorRembolso(manejadorGerente);
 		manejadorGerente.setSiguienteManejadorRembolso(manejadorDuenno);
 		
-		manejadorSupervisor.manjeadorSolicitudes(requestChainOfResponsabilitySet);
+		//manejadorSupervisor.manjeadorSolicitudes(requestChainOfResponsabilitySet);
+		manejadorSupervisor.manjeadorSolicitudes(requestChainOfResponsability);
+		requestChainOfResponsabilityRetorno.setMontoRembolso(requestChainOfResponsability.getMontoRembolso());
+		requestChainOfResponsabilityRetorno.setResultadoRembolso(requestChainOfResponsability.getResultadoRembolso());
 		
-		requestChainOfResponsability.setResultadoRembolso(requestChainOfResponsabilitySet.getResultadoRembolso());
 		
-		return "redirect:/solicitudRembolso";
+		return "redirect:/createSolicitudForm";
 	}
 }
