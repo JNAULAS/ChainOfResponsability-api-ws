@@ -9,9 +9,9 @@ package com.patrones.disenno.comportamiento.chainOfResponsability.request;
 public class RequestChainOfResponsability {
 	private double montoRembolso;
 	private String resultadoRembolso;
-	private boolean okRembolsoSupervisor;
-	private boolean okRembolsoGerente;
-	private boolean okRembolsoDuenno;
+//	private boolean okRembolsoSupervisor;
+//	private boolean okRembolsoGerente;
+//	private boolean okRembolsoDuenno;
 	/**
 	 * @return the montoRembolso
 	 */
@@ -36,43 +36,6 @@ public class RequestChainOfResponsability {
 	public void setResultadoRembolso(String resultadoRembolso) {
 		this.resultadoRembolso = resultadoRembolso;
 	}
-	/**
-	 * @return the okRembolsoSupervisor
-	 */
-	public boolean isOkRembolsoSupervisor() {
-		return okRembolsoSupervisor;
-	}
-	/**
-	 * @param okRembolsoSupervisor the okRembolsoSupervisor to set
-	 */
-	public void setOkRembolsoSupervisor(boolean okRembolsoSupervisor) {
-		this.okRembolsoSupervisor = okRembolsoSupervisor;
-	}
-	/**
-	 * @return the okRembolsoGerente
-	 */
-	public boolean isOkRembolsoGerente() {
-		return okRembolsoGerente;
-	}
-	/**
-	 * @param okRembolsoGerente the okRembolsoGerente to set
-	 */
-	public void setOkRembolsoGerente(boolean okRembolsoGerente) {
-		this.okRembolsoGerente = okRembolsoGerente;
-	}
-	/**
-	 * @return the okRembolsoDuenno
-	 */
-	public boolean isOkRembolsoDuenno() {
-		return okRembolsoDuenno;
-	}
-	/**
-	 * @param okRembolsoDuenno the okRembolsoDuenno to set
-	 */
-	public void setOkRembolsoDuenno(boolean okRembolsoDuenno) {
-		this.okRembolsoDuenno = okRembolsoDuenno;
-	}
-	
 	
 
 }

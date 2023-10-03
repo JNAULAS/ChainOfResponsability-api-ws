@@ -15,10 +15,9 @@ public class ChainOfResponsabilityApiWsApplication extends SpringBootServletInit
 	}
 
 	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		// TODO Auto-generated method stub
-		//return super.configure(builder);
-		return builder.sources(ChainOfResponsabilityApiWsApplication.class);
+		return application.sources(ChainOfResponsabilityApiWsApplication.class);
 	}
 	
 
