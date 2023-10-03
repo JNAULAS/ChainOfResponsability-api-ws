@@ -6,7 +6,7 @@
     <title>Solicitud Rembolso</title>
 </head>
 <body>
-    <h1>Solicitud Rembolso</h1>
+    <h1>Formulario de solicitud de rembolso de gastos</h1>
     <form action="/solicitarRembolso" method="post" th:object="${requestChainOfResponsability}">
         <label for="montoRembolso">Monto Rembolso:</label>
         <input type="text" id="montoRembolso" name="montoRembolso" th:field="*{montoRembolso}">
