@@ -31,7 +31,7 @@ public class ControllerRembolso {
 	@GetMapping("/createSolicitudForm")
 	public String createSolicitudForm(Model model) {
 		model.addAttribute("chainOfResponsability", new RequestChainOfResponsability());
-		return "homeSolicitudRembolso";
+		return "solicitudRembolso";
 	}
 
 	// Accion para ejecutar solicitat rembolso
@@ -51,6 +51,6 @@ public class ControllerRembolso {
 		
 		requestChainOfResponsability.setResultadoRembolso(requestChainOfResponsabilitySet.getResultadoRembolso());
 		
-		return "redirect:/SolicitudRembolso";
+		return "redirect:/solicitudRembolso";
 	}
 }

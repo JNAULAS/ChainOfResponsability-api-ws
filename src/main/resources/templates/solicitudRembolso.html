@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Solicitud Rembolso</h1>
-    <form action="@{/solicitarRembolso}" method="post" th:object="${requestChainOfResponsability}">
+    <form action="/solicitarRembolso" method="post" th:object="${requestChainOfResponsability}">
         <label for="montoRembolso">Monto Rembolso:</label>
         <input type="text" id="montoRembolso" name="montoRembolso" th:field="*{montoRembolso}">
         <br>
